@@ -1,0 +1,760 @@
+<title>Peram Chaitanya Raja</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Peram Chaitanya Raja, M.Tech Manufacturing, IIT Madras. Engineering work, content and design, leadership.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400;1,6..96,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a fine-jewellery catalogue on sapphire velvet. Projects are "pieces" with spec sheets, content work is the atelier, education is a certificate. Deliberately single dark theme. */
+:root{
+  --bg:#111012; --bg-2:#17161A; --card:#1C1A1F; --ink:#F6F3EC; --muted:#D2CCC1; --faint:#A69F93;
+  --line:#2F2B28; --gold:#D4B26A; --gold-hi:#F2DC9E; --gold-lo:#8E7238; --sapphire:#3D6BFF; --platinum:#C9CED9;
+  --display:"Bodoni Moda", "Didot", Georgia, serif;
+  --body:"DM Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+body{background:var(--bg); color:var(--ink); font-family:var(--body); font-weight:400; font-size:17px; line-height:1.7; -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(1100px 560px at 85% -10%, rgba(212,178,106,.10) 0%, transparent 60%), radial-gradient(900px 500px at -10% 45%, rgba(212,178,106,.05) 0%, transparent 60%)}
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:10; background:var(--bg)}
+a{color:inherit}
+:focus-visible{outline:1px solid var(--gold-hi); outline-offset:4px}
+h1,h2,h3{font-family:var(--display); font-weight:400; text-wrap:balance; margin:0; line-height:1.05}
+h3{font-family:var(--body); font-weight:600; letter-spacing:-.01em; line-height:1.3}
+.facet h3{font-family:var(--display); font-weight:400; letter-spacing:0; line-height:1.05}
+p{margin:0}
+.wrap{max-width:1160px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--mono); font-size:12px; font-weight:500; letter-spacing:.2em; text-transform:uppercase; color:var(--gold)}
+.num{font-variant-numeric:tabular-nums}
+.sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+
+/* NAV */
+.nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:20; background:rgba(17,16,18,.86); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:14px}
+.mark{font-family:var(--display); font-size:20px; text-decoration:none; letter-spacing:.02em}
+.mark i{color:var(--gold); font-style:italic}
+.nav ul{display:flex; gap:26px; list-style:none; margin:0; padding:0; font-size:13px; font-weight:500; letter-spacing:.14em; text-transform:uppercase}
+.nav ul a{text-decoration:none; color:var(--muted)}
+.nav ul a:hover{color:var(--gold-hi)}
+@media (max-width:820px){ .nav ul{display:none} }
+
+/* HERO */
+.hero{min-height:calc(100svh - 58px - env(safe-area-inset-top,0px)); display:grid; align-items:center}
+.hero .wrap{width:100%; padding-block:clamp(24px,5vh,56px)}
+.hero h1{font-size:clamp(44px, min(8.4vw, 13vh), 120px); letter-spacing:-.01em}
+.hero h1 em{color:var(--gold); font-style:italic}
+.tagline{margin-top:clamp(8px,1.6vh,18px); font-family:var(--display); font-style:italic; font-size:clamp(20px,2.4vw,26px); color:var(--muted)}
+.rotator{margin-top:clamp(12px,3vh,30px); font-size:clamp(18px,2vw,22px); font-weight:400; min-height:2.2em}
+.rotator .w{color:var(--gold-hi); font-weight:500; display:inline-block; transition:opacity .35s ease, transform .35s ease}
+.rotator .w.out{opacity:0; transform:translateY(6px)}
+.hallmark{margin-top:clamp(12px,3vh,32px); display:inline-flex; flex-wrap:wrap; align-items:stretch; border:1px solid var(--gold-lo); border-radius:3px; font-family:var(--mono); font-size:12px; letter-spacing:.12em; color:var(--gold)}
+.hallmark span{padding:8px 14px; border-left:1px solid var(--gold-lo)}
+.hallmark span:first-child{border-left:0; background:rgba(212,178,106,.08)}
+.hallmark-note{margin-top:8px; font-family:var(--mono); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--faint)}
+.cta{margin-top:clamp(16px,3.4vh,34px); display:flex; flex-wrap:wrap; gap:14px}
+.btn{display:inline-flex; align-items:center; gap:10px; padding:13px 22px; font-size:13px; letter-spacing:.16em; text-transform:uppercase; text-decoration:none; border:1px solid var(--gold); color:var(--ink); background:transparent; cursor:pointer; font-family:var(--body); transition:background .25s, color .25s}
+.btn:hover{background:var(--gold); color:var(--bg)}
+.btn.solid{background:var(--gold); color:var(--bg)}
+.btn.solid:hover{background:var(--gold-hi)}
+.ring{margin:0; min-width:0}
+.gem3d{position:relative; width:100%; max-width:480px; aspect-ratio:1/1; margin-inline:auto; cursor:grab; touch-action:pan-y; display:grid; place-items:center}
+.gem3d:active{cursor:grabbing}
+.gem3d canvas{display:block; position:absolute; inset:0}
+.gem3d svg{width:55%}
+.ring figcaption{margin-top:10px; text-align:center; font-family:var(--mono); font-size:12px; color:var(--faint); max-width:40ch; margin-inline:auto}
+
+
+/* SECTIONS */
+section{padding-block:96px}
+.head{text-align:center; max-width:720px; margin:0 auto 56px}
+.head h2{margin-top:14px; font-size:clamp(36px,5vw,60px)}
+.head h2 em{color:var(--gold); font-style:italic}
+.head p{margin-top:16px; color:var(--muted); font-size:17px}
+.divider{display:flex; align-items:center; gap:14px; justify-content:center; color:var(--gold-lo)}
+.divider::before,.divider::after{content:""; height:1px; width:80px; background:linear-gradient(90deg, transparent, var(--gold-lo))}
+.divider::after{transform:scaleX(-1)}
+@media (max-width:760px){ section{padding-block:64px} }
+
+/* FACETS */
+.facets{display:grid; grid-template-columns:1fr auto 1fr; gap:0; align-items:stretch; border:1px solid var(--line)}
+.facet{padding:40px clamp(20px,4vw,48px); min-width:0}
+.facet h3{font-size:clamp(28px,3.4vw,40px)}
+.facet h3 em{font-style:italic; color:var(--gold)}
+.facet p{margin-top:10px; color:var(--muted)}
+.facet ul{list-style:none; padding:0; margin:22px 0 0; display:flex; flex-wrap:wrap; gap:8px}
+.facet li{font-size:14px; padding:6px 12px; border:1px solid var(--line); border-radius:999px; color:var(--ink)}
+.gem-sep{display:grid; place-items:center; padding-inline:8px; border-inline:1px solid var(--line); background:rgba(212,178,106,.05)}
+.gem-sep svg{width:44px; height:44px}
+@media (max-width:820px){ .facets{grid-template-columns:1fr} .gem-sep{border-inline:0; border-block:1px solid var(--line); padding-block:14px} }
+
+/* COLLECTION */
+.collection{display:grid; gap:28px}
+.piece{display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--line); background:linear-gradient(180deg, rgba(28,26,31,.8), rgba(22,21,25,.8))}
+.piece:nth-child(even) .plate{order:2}
+.plate{position:relative; background:radial-gradient(circle at 50% 45%, #24211F, #0F0E10 75%); border-right:1px solid var(--line); min-width:0; display:grid; place-items:center; padding:24px}
+.piece:nth-child(even) .plate{border-right:0; border-left:1px solid var(--line)}
+.plate canvas{width:100%; max-width:520px; aspect-ratio:600/360; display:block}
+.plate .no{position:absolute; top:16px; left:18px; font-family:var(--mono); font-size:11px; letter-spacing:.2em; color:var(--gold)}
+.plate .ill{position:absolute; bottom:12px; right:16px; font-family:var(--mono); font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--faint)}
+.spec{padding:clamp(22px,3.4vw,40px); min-width:0; display:grid; gap:18px; align-content:start}
+.spec .type{font-family:var(--mono); font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted)}
+.spec h3{font-size:clamp(21px,2.2vw,26px)}
+.spec .line{color:var(--muted)}
+dl.sheet{margin:0; display:grid; grid-template-columns:auto 1fr; border-top:1px solid var(--line)}
+dl.sheet dt, dl.sheet dd{padding:10px 0; border-bottom:1px solid var(--line); margin:0; font-size:15px}
+dl.sheet dt{font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); padding-right:20px; padding-top:12px}
+details.more summary{cursor:pointer; font-size:13px; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:var(--gold-hi); list-style:none; display:inline-flex; gap:10px; align-items:center}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::after{content:"+"; font-family:var(--mono)}
+details.more[open] summary::after{content:"−"}
+details.more ul{margin:14px 0 0; padding-left:18px; color:var(--muted); display:grid; gap:8px; font-size:16px}
+@media (max-width:880px){ .piece{grid-template-columns:1fr} .piece:nth-child(even) .plate{order:0} .plate,.piece:nth-child(even) .plate{border:0; border-bottom:1px solid var(--line)} }
+
+/* ATELIER */
+.wall{display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
+.tile{border:1px solid var(--line); background:var(--bg-2); display:grid; grid-template-rows:auto 1fr; min-width:0; transition:border-color .3s, transform .3s}
+.tile:hover{border-color:var(--gold-lo); transform:translateY(-2px)}
+.tile svg{display:block; width:100%; aspect-ratio:4/3; background:radial-gradient(circle at 50% 40%, #211F22, #0F0E10 80%)}
+.tile div{padding:14px 16px}
+.tile b{display:block; font-family:var(--body); font-weight:600; font-size:17px; line-height:1.3}
+.tile span{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--faint)}
+@media (max-width:900px){ .wall{grid-template-columns:repeat(2,1fr)} }
+@media (prefers-reduced-motion: reduce){ .tile{transition:none} .tile:hover{transform:none} }
+.ateliers{margin-top:40px; display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+.studio{border:1px solid var(--line); padding:26px; display:grid; gap:12px; align-content:start; min-width:0}
+.studio .type{font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold)}
+.studio h3{font-size:21px}
+.studio .when{font-size:14px; color:var(--faint)}
+.studio p{color:var(--muted); font-size:16px}
+@media (max-width:900px){ .ateliers{grid-template-columns:1fr} }
+
+/* MAKING (timeline) */
+.gantt-wrap{overflow-x:auto; border:1px solid var(--line); background:var(--bg-2)}
+.gantt{min-width:820px; padding:24px; display:grid; grid-template-columns:130px repeat(21, 1fr); row-gap:10px; font-size:12px}
+.gantt .lane{grid-column:1; font-family:var(--mono); font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); display:flex; align-items:center; gap:8px}
+.gantt .lane i{width:10px; height:10px; transform:rotate(45deg); display:inline-block}
+.gantt .m{font-family:var(--mono); font-size:10px; color:var(--faint); text-align:center; border-left:1px solid var(--line); padding-bottom:6px}
+.gantt .yr{color:var(--gold)}
+.bar{height:34px; display:flex; align-items:center; padding:0 10px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-size:12px; color:var(--bg); font-weight:500; border-radius:2px}
+.bar.gold{background:linear-gradient(90deg, var(--gold-lo), var(--gold), var(--gold-hi))}
+.bar.sapph{background:linear-gradient(90deg, #2346C4, var(--sapphire), #7C9BFF); color:#fff}
+.bar.plat{background:linear-gradient(90deg, #8E95A6, var(--platinum), #EEF1F6)}
+.bar.dash{background:repeating-linear-gradient(135deg, rgba(201,206,217,.9) 0 10px, rgba(201,206,217,.7) 10px 20px)}
+.legend{margin-top:14px; display:flex; flex-wrap:wrap; gap:20px; font-size:13px; color:var(--muted); justify-content:center}
+.legend span{display:inline-flex; align-items:center; gap:8px}
+.legend i{width:10px; height:10px; transform:rotate(45deg); display:inline-block}
+
+/* SETTINGS (leadership) */
+.settings{display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
+.setting{border:1px solid var(--line); padding:26px 22px; text-align:center; display:grid; gap:10px; align-content:start; min-width:0}
+.setting svg{width:34px; height:34px; margin:0 auto}
+.setting h3{font-size:19px}
+.setting .when{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--gold)}
+.setting p{color:var(--muted); font-size:15px}
+@media (max-width:980px){ .settings{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:560px){ .settings{grid-template-columns:1fr} }
+
+/* CERTIFICATE */
+.cert{position:relative; border:1px solid var(--gold-lo); padding:10px}
+.cert-in{border:1px solid var(--gold-lo); padding:clamp(24px,5vw,56px); background:linear-gradient(180deg, rgba(212,178,106,.05), transparent)}
+.cert-top{display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; align-items:flex-start}
+.cert h2{font-size:clamp(30px,4.4vw,52px)}
+.cert h2 em{font-style:italic; color:var(--gold)}
+.seal{width:110px; height:110px; flex:none}
+.cert-grid{margin-top:36px; display:grid; grid-template-columns:1.2fr 1fr; gap:48px}
+.cert-grid > *{min-width:0}
+.edu{list-style:none; margin:0; padding:0}
+.edu li{display:grid; grid-template-columns:56px 1fr auto; gap:14px; padding:14px 0; border-bottom:1px dotted var(--gold-lo); align-items:baseline}
+.edu .yr{font-family:var(--mono); font-size:12px; color:var(--gold)}
+.edu b{font-weight:600}
+.edu small{display:block; color:var(--muted); font-size:14px}
+.edu .score{font-family:var(--display); font-size:22px; color:var(--gold-hi); white-space:nowrap}
+.cert h4{margin:0 0 10px; font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:var(--gold)}
+.cert ul.plain{list-style:none; margin:0 0 26px; padding:0; display:grid; gap:8px; font-size:15px; color:var(--muted)}
+.cert ul.plain li::before{content:"◆"; color:var(--gold-lo); margin-right:10px; font-size:9px; vertical-align:2px}
+.tools{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:22px}
+.tools span{font-size:14px; padding:5px 11px; border:1px solid var(--line); color:var(--ink)}
+.sig{margin-top:30px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--faint)}
+.sig b{display:block; font-family:var(--display); font-style:italic; text-transform:none; letter-spacing:0; font-size:22px; color:var(--ink); font-weight:400; border-bottom:1px solid var(--gold-lo); padding-bottom:4px; margin-bottom:6px}
+@media (max-width:880px){ .cert-grid{grid-template-columns:1fr; gap:28px} .seal{width:84px; height:84px} }
+
+/* ENQUIRIES */
+.enq{text-align:center}
+.enq h2{font-size:clamp(40px,6vw,76px)}
+.enq h2 em{font-style:italic; color:var(--gold)}
+.enq p{margin-top:16px; color:var(--muted)}
+.mail{margin-top:30px; display:flex; flex-wrap:wrap; gap:12px; justify-content:center; align-items:center}
+.mail code{font-family:var(--mono); font-size:15px; padding:12px 18px; border:1px solid var(--line); user-select:all; word-break:break-all}
+.copied{font-family:var(--mono); font-size:12px; color:var(--gold); min-width:6ch}
+footer{border-top:1px solid var(--line); color:var(--faint); font-size:12px; letter-spacing:.1em; text-transform:uppercase; font-family:var(--mono)}
+footer .wrap{padding-block:24px; display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between}
+</style>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="mark" href="#top">P. Chaitanya <i>Raja</i></a>
+    <ul>
+      <li><a href="#collection">Collection</a></li>
+      <li><a href="#atelier">Atelier</a></li>
+      <li><a href="#making">The Making</a></li>
+      <li><a href="#certificate">Certificate</a></li>
+      <li><a href="#enquiries">Enquiries</a></li>
+      <li><a href="https://drive.google.com/file/d/14a06MWt_aTO4qMZVdP5MPF5jzrwkX93I/view?usp=sharing" target="_blank" rel="noopener" style="color:var(--gold-hi)">Resume ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">M.Tech · Manufacturing Engineering · IIT Madras</p>
+      <h1 style="margin-top:clamp(8px,1.8vh,18px)">Peram Chaitanya <em>Raja</em></h1>
+      <p class="tagline">Engineer by training. Creator by practice.</p>
+      <p class="rotator" aria-hidden="true">I <span class="w" id="rot">model weld heat in ABAQUS</span></p>
+      <p class="sr">I model weld heat in ABAQUS, run CFD in ANSYS Fluent, train ML models in Python, produce promotional videos, design posters and pitch decks, manage Instagram and LinkedIn content, and run events on the ground.</p>
+      <div>
+        <div class="hallmark" aria-label="Hallmark: IIT Madras, ME25M131, CGPA 8.19">
+          <span>IITM</span><span>ME25M131</span><span class="num">8.19</span><span class="num">SEM 2 · 9.09</span>
+        </div>
+        <p class="hallmark-note">Hallmarked · Indian Institute of Technology Madras</p>
+      </div>
+      <div class="cta">
+        <a class="btn solid" href="#collection">View the collection</a>
+        <a class="btn" href="#atelier">Enter the atelier</a>
+        <a class="btn" href="https://drive.google.com/file/d/14a06MWt_aTO4qMZVdP5MPF5jzrwkX93I/view?usp=sharing" target="_blank" rel="noopener">Resume ↗</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="facets" style="padding-top:0">
+  <div class="wrap">
+    <div class="facets">
+      <div class="facet">
+        <p class="eyebrow">Facet I</p>
+        <h3 style="margin-top:10px">The <em>engineer</em></h3>
+        <p>Simulating heat, stress, air and motion, and reading what the data says.</p>
+        <ul><li>Engineering Analysis</li><li>FEA</li><li>CFD</li><li>Welding</li><li>Manufacturing</li><li>Machine Learning</li><li>Data Analytics</li><li>Quality &amp; Inspection</li></ul>
+      </div>
+      <div class="gem-sep" aria-hidden="true">
+        <svg viewBox="0 0 44 44"><polygon points="22,4 38,16 22,40 6,16" fill="#3D6BFF" opacity=".9"/><polygon points="22,4 30,16 22,40 14,16" fill="#7C9BFF" opacity=".7"/><polyline points="6,16 38,16" stroke="#F2DC9E" stroke-width="1" fill="none"/><polygon points="22,4 38,16 22,40 6,16" fill="none" stroke="#D4B26A" stroke-width="1"/></svg>
+      </div>
+      <div class="facet">
+        <p class="eyebrow">Facet II</p>
+        <h3 style="margin-top:10px">The <em>creator</em></h3>
+        <p>Making videos, posters, decks and digital content for the teams I work with.</p>
+        <ul><li>Promotional videos</li><li>Social media</li><li>Pitch decks</li><li>Posters</li><li>Branding</li><li>Website content</li><li>Events</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="collection">
+  <div class="wrap">
+    <div class="head">
+      <div class="divider"><span class="eyebrow">The Collection</span></div>
+      <h2>Seven pieces, <em>engineered.</em></h2>
+      <p>My engineering work, each piece with its own detail sheet.</p>
+    </div>
+    <div class="collection">
+
+      <article class="piece">
+        <div class="plate"><span class="no">No. 01</span><canvas data-draw="weld" width="1200" height="720"></canvas><span class="ill">Illustration</span></div>
+        <div class="spec">
+          <p class="type">M.Tech project · ongoing</p>
+          <h3>Residual stress and distortion in TIG-welded stainless steel joints</h3>
+          <p class="line">Experiments and modelling of what welding leaves behind inside the metal.</p>
+          <dl class="sheet">
+            <dt>Material</dt><dd>SS316LN</dd>
+            <dt>Craft</dt><dd>TIG welding · thermo-mechanical FEA · NDT</dd>
+            <dt>Detail</dt><dd class="num">119,743 nodes · 108,000 C3D8R elements</dd>
+            <dt>Tools</dt><dd>ABAQUS (user subroutine) · Python</dd>
+            <dt>Atelier</dt><dd>IIT Madras × IGCAR · Prof. S. Hiremath, David Vijayanand V</dd>
+            <dt>Period</dt><dd>Aug 2026 to present</dd>
+          </dl>
+          <details class="more"><summary>Full details</summary>
+            <ul>
+              <li>Worked on implementing the Goldak double-ellipsoidal moving heat source model using a user-defined subroutine in ABAQUS to simulate transient heat input during TIG welding.</li>
+              <li>Developed a 3D thermo-mechanical (multi-physics) FEA model in ABAQUS comprising 119,743 nodes and 108,000 C3D8R solid elements to investigate welding-induced residual stresses and distortion.</li>
+              <li>Conducting TIG welding experiments on SS316LN, assessing residual stresses and distortion using NDT techniques.</li>
+              <li>Aiming to develop machine-learning surrogate models using Python to predict welding responses, reduce computational time and simulation costs, and achieve high predictive accuracy compared with conventional FEA simulations.</li>
+            </ul>
+          </details>
+        </div>
+      </article>
+
+      <article class="piece">
+        <div class="plate"><span class="no">No. 02</span><canvas data-draw="battery" width="1200" height="720"></canvas><span class="ill">Illustration</span></div>
+        <div class="spec">
+          <p class="type">CAE Engineering Intern · Simulation Lab</p>
+          <h3>Thermal analysis of an 8-battery cooling system</h3>
+          <p class="line">Heat transfer, temperature distribution and cooling performance, simulated and tested.</p>
+          <dl class="sheet">
+            <dt>Cases</dt><dd class="num">60 ANSYS thermal analyses · 100 solver iterations</dd>
+            <dt>Data</dt><dd class="num">960 readings across 30 days of testing</dd>
+            <dt>Conditions</dt><dd class="num">30 °C and 35 °C battery · 18 °C coolant inlet · 1 m/s</dd>
+            <dt>Period</dt><dd>Apr to May 2026</dd>
+          </dl>
+          <details class="more"><summary>Full details</summary>
+            <ul>
+              <li>Performed 60 ANSYS-based thermal analysis cases on an 8-battery cooling system, evaluating heat transfer, temperature distribution and cooling performance under a 1 m/s coolant inlet velocity.</li>
+              <li>Generated finite-element meshes, applied boundary conditions and executed 100 solver iterations to analyse temperature distribution and thermal behaviour in coolers and battery systems.</li>
+              <li>Analysed 960 battery inlet/outlet temperature readings across 30 days of testing, assessing thermal behaviour at 30 °C and 35 °C battery operating conditions with an 18 °C coolant inlet temperature.</li>
+            </ul>
+          </details>
+        </div>
+      </article>
+
+      <article class="piece">
+        <div class="plate"><span class="no">No. 03</span><canvas data-draw="scatter" width="1200" height="720"></canvas><span class="ill">Illustration</span></div>
+        <div class="spec">
+          <p class="type">AI in Manufacturing · course project</p>
+          <h3>AI-driven precision monitoring for robotic arms</h3>
+          <p class="line">Predicting 3D positioning error of a robotic arm with machine learning.</p>
+          <dl class="sheet">
+            <dt>Model</dt><dd>Random Forest</dd>
+            <dt>Result</dt><dd class="num">R² = 0.9929</dd>
+            <dt>Tools</dt><dd>Python · scikit-learn · Pandas · NumPy</dd>
+            <dt>Period</dt><dd>Sep to Nov 2025</dd>
+          </dl>
+          <details class="more"><summary>Full details</summary>
+            <ul>
+              <li>Trained a Random Forest model using Python and scikit-learn on Kaggle robotic data, achieving R² = 0.9929.</li>
+              <li>Built an ML pipeline using Pandas and NumPy for preprocessing, feature engineering and 3D positioning error analysis.</li>
+            </ul>
+          </details>
+        </div>
+      </article>
+
+      <article class="piece">
+        <div class="plate"><span class="no">No. 04</span><canvas data-draw="signals" width="1200" height="720"></canvas><span class="ill">Illustration</span></div>
+        <div class="spec">
+          <p class="type">Smart Manufacturing · course project</p>
+          <h3>Prediction of spindle dynamics using sensor fusion</h3>
+          <p class="line">Many sensors, one picture of how a machine spindle is behaving.</p>
+          <dl class="sheet">
+            <dt>Craft</dt><dd>Multi-sensor acquisition · signal preprocessing · feature extraction</dd>
+            <dt>Method</dt><dd>Sensor fusion · machine learning</dd>
+            <dt>Period</dt><dd>Feb to May 2026</dd>
+          </dl>
+          <details class="more"><summary>Full details</summary>
+            <ul>
+              <li>Worked on multi-sensor data acquisition, signal preprocessing and feature extraction for spindle condition monitoring.</li>
+              <li>Applied sensor fusion techniques and developed machine learning models for spindle dynamics and data analysis.</li>
+            </ul>
+          </details>
+        </div>
+      </article>
+
+      <article class="piece">
+        <div class="plate"><span class="no">No. 05</span><canvas data-draw="airfoil" width="1200" height="720"></canvas><span class="ill">NACA 4412 profile</span></div>
+        <div class="spec">
+          <p class="type">Analytical project</p>
+          <h3>Airfoil CFD analysis using ANSYS Fluent</h3>
+          <p class="line">NACA 4412 aerodynamics across varying angles of attack.</p>
+          <dl class="sheet">
+            <dt>Profile</dt><dd>NACA 4412</dd>
+            <dt>Tools</dt><dd>ANSYS Fluent · ANSYS Workbench · Python</dd>
+            <dt>Craft</dt><dd>Automated parameter studies and post-processing</dd>
+          </dl>
+          <details class="more"><summary>Full details</summary>
+            <ul>
+              <li>Analysed NACA 4412 airfoil aerodynamics across varying angles of attack using ANSYS Fluent.</li>
+              <li>Automated CFD parameter studies and post-processing using Python and ANSYS Workbench.</li>
+            </ul>
+          </details>
+        </div>
+      </article>
+
+      <article class="piece">
+        <div class="plate"><span class="no">No. 06</span><canvas data-draw="arm" width="1200" height="720"></canvas><span class="ill">Illustration</span></div>
+        <div class="spec">
+          <p class="type">B.Tech project · NIT Puducherry</p>
+          <h3>Optimal trajectory planning of industrial robots</h3>
+          <p class="line">Improving positional accuracy for robotic welding.</p>
+          <dl class="sheet">
+            <dt>Design</dt><dd>5-DOF arm · 6 links · GD&amp;T part drawings</dd>
+            <dt>Tools</dt><dd>CATIA V5 · MATLAB</dd>
+            <dt>Period</dt><dd>Jul 2020 to May 2021</dd>
+          </dl>
+          <details class="more"><summary>Full details</summary>
+            <ul>
+              <li>Designed 5-DOF robotic arm components in CATIA V5, applying GD&amp;T to part drawings and assembling 6 links for kinematic simulation.</li>
+              <li>Performed kinematic simulation and trajectory optimisation using MATLAB, evaluating joint motion and positional accuracy for robotic welding applications.</li>
+            </ul>
+          </details>
+        </div>
+      </article>
+
+      <article class="piece">
+        <div class="plate"><span class="no">No. 07</span><canvas data-draw="rolling" width="1200" height="720"></canvas><span class="ill">Illustration</span></div>
+        <div class="spec">
+          <p class="type">Engineering Intern · BHEL</p>
+          <h3>Heavy Plates &amp; Vessels Plant</h3>
+          <p class="line">Where heavy industrial equipment is cut, rolled, welded and inspected.</p>
+          <dl class="sheet">
+            <dt>Processes</dt><dd>CNC profile cutting · plate rolling · welding · fabrication</dd>
+            <dt>Also</dt><dd>Assembly and quality inspection</dd>
+            <dt>Period</dt><dd>May to Jun 2019</dd>
+          </dl>
+          <details class="more"><summary>Full details</summary>
+            <ul>
+              <li>Gained practical exposure to 4 key manufacturing processes: CNC profile cutting, plate rolling, welding and fabrication, along with the assembly and quality inspection of heavy industrial equipment.</li>
+              <li>Engaged with design and quality-control teams to understand inspection requirements and production workflows.</li>
+            </ul>
+          </details>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="atelier">
+  <div class="wrap">
+    <div class="head">
+      <div class="divider"><span class="eyebrow">The Atelier</span></div>
+      <h2>Where the <em>making</em> happens.</h2>
+      <p>Videos, posts, posters, decks, T-shirts and a festival website, made for the teams I've been part of at IIT Madras.</p>
+    </div>
+    <div class="wall">
+      <figure class="tile" style="margin:0"><svg viewBox="0 0 160 120" aria-hidden="true"><rect x="22" y="26" width="116" height="66" fill="none" stroke="#D4B26A"/><polygon points="72,46 92,59 72,72" fill="#F2DC9E"/><line x1="30" y1="84" x2="130" y2="84" stroke="#2F2B28" stroke-width="3"/><line x1="30" y1="84" x2="78" y2="84" stroke="#D4B26A" stroke-width="3"/></svg><div><b>Promotional videos</b><span>Avishkar Hyperloop</span></div></figure>
+      <figure class="tile" style="margin:0"><svg viewBox="0 0 160 120" aria-hidden="true"><rect x="22" y="26" width="116" height="66" fill="none" stroke="#D4B26A"/><circle cx="56" cy="56" r="10" fill="none" stroke="#F2DC9E"/><circle cx="80" cy="56" r="10" fill="none" stroke="#F2DC9E"/><circle cx="104" cy="56" r="10" fill="none" stroke="#F2DC9E"/><path d="M44 80q12-10 24 0M68 80q12-10 24 0M92 80q12-10 24 0" fill="none" stroke="#D4B26A"/></svg><div><b>Team introduction videos</b><span>Avishkar Hyperloop</span></div></figure>
+      <figure class="tile" style="margin:0"><svg viewBox="0 0 160 120" aria-hidden="true"><rect x="50" y="18" width="60" height="84" rx="8" fill="none" stroke="#D4B26A"/><g fill="#3D6BFF" opacity=".75"><rect x="55" y="34" width="16" height="16"/><rect x="72" y="34" width="16" height="16" fill="#D4B26A"/><rect x="89" y="34" width="16" height="16"/><rect x="55" y="51" width="16" height="16" fill="#D4B26A"/><rect x="72" y="51" width="16" height="16"/><rect x="89" y="51" width="16" height="16" fill="#D4B26A"/><rect x="55" y="68" width="16" height="16"/><rect x="72" y="68" width="16" height="16" fill="#D4B26A"/><rect x="89" y="68" width="16" height="16"/></g></svg><div><b>Instagram content</b><span>Avishkar Hyperloop</span></div></figure>
+      <figure class="tile" style="margin:0"><svg viewBox="0 0 160 120" aria-hidden="true"><rect x="30" y="20" width="100" height="80" fill="none" stroke="#D4B26A"/><circle cx="44" cy="34" r="6" fill="#D4B26A"/><line x1="56" y1="31" x2="96" y2="31" stroke="#F2DC9E"/><line x1="56" y1="37" x2="80" y2="37" stroke="#8A8478"/><rect x="38" y="46" width="84" height="38" fill="#3D6BFF" opacity=".35"/><line x1="38" y1="92" x2="70" y2="92" stroke="#8A8478"/></svg><div><b>LinkedIn content</b><span>Avishkar Hyperloop</span></div></figure>
+      <figure class="tile" style="margin:0"><svg viewBox="0 0 160 120" aria-hidden="true"><rect x="40" y="38" width="84" height="54" fill="#0F0E10" stroke="#8A8478"/><rect x="34" y="32" width="84" height="54" fill="#17161A" stroke="#8E7238"/><rect x="28" y="26" width="84" height="54" fill="#1C1A1F" stroke="#D4B26A"/><line x1="36" y1="38" x2="76" y2="38" stroke="#F2DC9E" stroke-width="2"/><rect x="36" y="48" width="18" height="22" fill="#D4B26A" opacity=".8"/><rect x="58" y="56" width="18" height="14" fill="#3D6BFF"/><rect x="80" y="44" width="18" height="26" fill="#D4B26A" opacity=".5"/></svg><div><b>Pitch decks</b><span>Avishkar · sponsorship</span></div></figure>
+      <figure class="tile" style="margin:0"><svg viewBox="0 0 160 120" aria-hidden="true"><rect x="54" y="14" width="52" height="92" fill="none" stroke="#D4B26A"/><rect x="60" y="22" width="40" height="40" fill="#3D6BFF" opacity=".6"/><circle cx="80" cy="42" r="12" fill="none" stroke="#F2DC9E"/><line x1="60" y1="72" x2="100" y2="72" stroke="#F2DC9E" stroke-width="3"/><line x1="60" y1="80" x2="88" y2="80" stroke="#8A8478"/><line x1="60" y1="86" x2="92" y2="86" stroke="#8A8478"/></svg><div><b>Posters &amp; campaigns</b><span>Avishkar · SECC elections</span></div></figure>
+      <figure class="tile" style="margin:0"><svg viewBox="0 0 160 120" aria-hidden="true"><path d="M60 22l-24 14 8 16 10-5v53h52V47l10 5 8-16-24-14q-10 10-20 10t-20-10z" fill="none" stroke="#D4B26A"/><polygon points="80,52 90,60 80,74 70,60" fill="#3D6BFF"/></svg><div><b>Team T-shirts &amp; branding</b><span>Avishkar · SECC</span></div></figure>
+      <figure class="tile" style="margin:0"><svg viewBox="0 0 160 120" aria-hidden="true"><rect x="22" y="22" width="116" height="76" fill="none" stroke="#D4B26A"/><line x1="22" y1="32" x2="138" y2="32" stroke="#D4B26A"/><circle cx="28" cy="27" r="1.6" fill="#F2DC9E"/><circle cx="34" cy="27" r="1.6" fill="#F2DC9E"/><circle cx="40" cy="27" r="1.6" fill="#F2DC9E"/><rect x="30" y="40" width="100" height="26" fill="#3D6BFF" opacity=".45"/><rect x="30" y="72" width="30" height="18" fill="none" stroke="#8A8478"/><rect x="65" y="72" width="30" height="18" fill="none" stroke="#8A8478"/><rect x="100" y="72" width="30" height="18" fill="none" stroke="#8A8478"/></svg><div><b>Festival website</b><span>Shaastra 2026 · WebOps</span></div></figure>
+    </div>
+
+    <div class="ateliers">
+      <div class="studio">
+        <p class="type">Business Team Member</p>
+        <h3>Avishkar Hyperloop</h3>
+        <p class="when">Mar to Jun 2026</p>
+        <p>Conceptualized and produced promotional videos, team introduction videos and social media content. Managed Instagram and LinkedIn, and designed pitch decks, posters, T-shirts and branding with one consistent visual identity.</p>
+        <details class="more"><summary>Full details</summary>
+          <ul>
+            <li>Conceptualized and produced promotional videos, team introduction videos and social media content to showcase team initiatives and achievements.</li>
+            <li>Managed Instagram and LinkedIn promotional content, strengthening digital presence, brand visibility and audience engagement.</li>
+            <li>Designed pitch decks, promotional posters, team T-shirts and branding materials, maintaining a consistent visual identity across platforms.</li>
+            <li>Collaborated with marketing and business teams on digital campaigns, sponsorship outreach and stakeholder presentations.</li>
+            <li>Responsible for industry outreach, sponsorship development and collaboration with the marketing, finance and CSR teams.</li>
+          </ul>
+        </details>
+      </div>
+      <div class="studio">
+        <p class="type">Events Coordinator</p>
+        <h3>Students' Ethics and Constitution Committee</h3>
+        <p class="when">Sep 2026 to Feb 2027</p>
+        <p>Designed posters, T-shirts and visual campaign material for student elections and rallies, and ran the Freshers' Elections on the ground.</p>
+        <details class="more"><summary>Full details</summary>
+          <ul>
+            <li>Designed promotional posters, T-shirts and visual campaign materials for student elections, rallies and campus engagement initiatives.</li>
+            <li>Developed creative communication materials to promote event awareness, student participation and campaign visibility.</li>
+            <li>Coordinated event planning, logistics, volunteer teams and on-ground execution during Freshers' Elections.</li>
+            <li>Led on-ground election management by supervising polling stations and coordinating volunteers.</li>
+          </ul>
+        </details>
+      </div>
+      <div class="studio">
+        <p class="type">WebOps Trainee</p>
+        <h3>Shaastra 2026</h3>
+        <p class="when">IIT Madras's annual technical festival</p>
+        <p>Helped build, maintain and update the festival's official website, including its content and presentation.</p>
+        <details class="more"><summary>Full details</summary>
+          <ul>
+            <li>Contributed to the development and maintenance of Shaastra's official website, supporting the festival's digital presence.</li>
+            <li>Assisted in website content creation, organization and updates, ensuring clear and engaging communication.</li>
+            <li>Collaborated with the WebOps team on digital content presentation and website improvements.</li>
+          </ul>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="making">
+  <div class="wrap">
+    <div class="head">
+      <div class="divider"><span class="eyebrow">The Making</span></div>
+      <h2>Three metals, <em>one timeline.</em></h2>
+      <p>My time at IIT Madras: engineering, content and leadership, running side by side.</p>
+    </div>
+    <div class="gantt-wrap">
+      <div class="gantt" role="img" aria-label="Timeline from September 2025 to May 2027 showing engineering, content and leadership work in parallel">
+        <div></div>
+        <div class="m yr">S<br>'25</div><div class="m">O</div><div class="m">N</div><div class="m">D</div>
+        <div class="m yr">J<br>'26</div><div class="m">F</div><div class="m">M</div><div class="m">A</div><div class="m">M</div><div class="m">J</div><div class="m">J</div><div class="m">A</div><div class="m">S</div><div class="m">O</div><div class="m">N</div><div class="m">D</div>
+        <div class="m yr">J<br>'27</div><div class="m">F</div><div class="m">M</div><div class="m">A</div><div class="m">M</div>
+
+        <div class="lane" style="grid-row:2"><i style="background:var(--gold)"></i>Engineering</div>
+        <div class="bar gold" style="grid-row:2; grid-column:2 / 5" title="AI in Manufacturing, Sep to Nov 2025">AI in Mfg · R² 0.9929</div>
+        <div class="bar gold" style="grid-row:2; grid-column:7 / 11" title="Smart Manufacturing, Feb to May 2026">Spindle sensor fusion</div>
+        <div class="bar gold" style="grid-row:2; grid-column:13 / 23" title="M.Tech project at IGCAR, Aug 2026 to May 2027">M.Tech project · TIG welding · IGCAR</div>
+        <div class="bar gold" style="grid-row:3; grid-column:9 / 11" title="CAE Engineering Intern, Simulation Lab, Apr to May 2026">CAE intern</div>
+
+        <div class="lane" style="grid-row:4"><i style="background:var(--sapphire)"></i>Content</div>
+        <div class="bar sapph" style="grid-row:4; grid-column:8 / 12" title="Avishkar Hyperloop, Mar to Jun 2026">Avishkar Hyperloop</div>
+        <div class="bar sapph" style="grid-row:4; grid-column:14 / 20" title="SECC Events Coordinator, Sep 2026 to Feb 2027">SECC · elections campaign</div>
+
+        <div class="lane" style="grid-row:5"><i style="background:var(--platinum)"></i>Leadership</div>
+        <div class="bar plat" style="grid-row:5; grid-column:3 / 7" title="58th Inter IIT Sports Meet, Oct 2025 to Jan 2026">58th Inter IIT Sports Meet</div>
+        <div class="bar plat dash" style="grid-row:5; grid-column:12 / 23" title="Academic year 2026–27">2026–27 · Placement Team · Social Secretary · SAATHI Mentor</div>
+      </div>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--gold)"></i>Gold · engineering</span>
+      <span><i style="background:var(--sapphire)"></i>Sapphire · content &amp; design</span>
+      <span><i style="background:var(--platinum)"></i>Platinum · leadership</span>
+    </div>
+  </div>
+</section>
+
+<section id="settings">
+  <div class="wrap">
+    <div class="head">
+      <div class="divider"><span class="eyebrow">The Settings</span></div>
+      <h2>Roles that <em>hold things together.</em></h2>
+      <p>A setting holds the stone in place. These are the roles where I keep people and plans in place.</p>
+    </div>
+    <div class="settings">
+      <div class="setting">
+        <svg viewBox="0 0 34 34" aria-hidden="true"><polygon points="17,3 29,13 17,31 5,13" fill="none" stroke="#D4B26A"/><polygon points="17,9 23,14 17,24 11,14" fill="#3D6BFF"/></svg>
+        <p class="when">Coordinator · 2026–27</p>
+        <h3>Placement Team</h3>
+        <p>Corporate outreach to HR representatives and industry recruiters, and coordinating campus hiring for the Mechanical Engineering department.</p>
+      </div>
+      <div class="setting">
+        <svg viewBox="0 0 34 34" aria-hidden="true"><polygon points="17,3 29,13 17,31 5,13" fill="none" stroke="#D4B26A"/><polygon points="17,9 23,14 17,24 11,14" fill="#3D6BFF"/></svg>
+        <p class="when">Social Secretary · 2026–27</p>
+        <h3>Krishna Hostel</h3>
+        <p>Hostel activities, student welfare, budgeting and events. Member of the Hostel Council of Secretaries, organising General Body Meetings.</p>
+      </div>
+      <div class="setting">
+        <svg viewBox="0 0 34 34" aria-hidden="true"><polygon points="17,3 29,13 17,31 5,13" fill="none" stroke="#D4B26A"/><polygon points="17,9 23,14 17,24 11,14" fill="#3D6BFF"/></svg>
+        <p class="when">Coordinator · Oct 2025 – Jan 2026</p>
+        <h3>58th Inter IIT Sports Meet</h3>
+        <p>Managed volunteer teams and coordinated logistics, accommodation, boarding and hospitality for participants.</p>
+      </div>
+      <div class="setting">
+        <svg viewBox="0 0 34 34" aria-hidden="true"><polygon points="17,3 29,13 17,31 5,13" fill="none" stroke="#D4B26A"/><polygon points="17,9 23,14 17,24 11,14" fill="#3D6BFF"/></svg>
+        <p class="when">Mentor · 2026–27</p>
+        <h3>SAATHI PG Mentor</h3>
+        <p>Selected to support student self-growth, well-being and developmental initiatives.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certificate">
+  <div class="wrap">
+    <div class="cert">
+      <div class="cert-in">
+        <div class="cert-top">
+          <div>
+            <p class="eyebrow">Certificate of Authenticity</p>
+            <h2 style="margin-top:12px">Education, skills &amp; <em>distinctions</em></h2>
+          </div>
+          <svg class="seal" viewBox="0 0 110 110" aria-hidden="true">
+            <defs><path id="sealpath" d="M55,55 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0"/></defs>
+            <circle cx="55" cy="55" r="52" fill="none" stroke="#D4B26A"/>
+            <circle cx="55" cy="55" r="30" fill="none" stroke="#8E7238"/>
+            <text font-family="IBM Plex Mono, monospace" font-size="7.4" letter-spacing="2.2" fill="#D4B26A"><textPath href="#sealpath">INDIAN INSTITUTE OF TECHNOLOGY MADRAS · ME25M131 ·</textPath></text>
+            <polygon points="55,36 69,48 55,72 41,48" fill="#3D6BFF"/>
+            <polygon points="55,36 62,48 55,72 48,48" fill="#7C9BFF" opacity=".7"/>
+            <line x1="41" y1="48" x2="69" y2="48" stroke="#F2DC9E" stroke-width=".8"/>
+          </svg>
+        </div>
+        <div class="cert-grid">
+          <div>
+            <h4>Education</h4>
+            <ul class="edu">
+              <li><span class="yr">2027</span><span><b>M.Tech, Manufacturing Engineering</b><small>Indian Institute of Technology Madras · ongoing</small></span><span class="score num">8.19</span></li>
+              <li><span class="yr">2021</span><span><b>B.Tech, Mechanical Engineering</b><small>NIT Puducherry, Karaikal</small></span><span class="score num">7.7</span></li>
+              <li><span class="yr">2017</span><span><b>XII (BIEAP)</b><small>Sri Chaitanya Jr. College, Steel Plant, Vizag</small></span><span class="score num">90.7%</span></li>
+              <li><span class="yr">2015</span><span><b>X (BSEAP)</b><small>D.A.V. Public School, Anakapalle</small></span><span class="score num">9.8</span></li>
+            </ul>
+            <h4 style="margin-top:28px">Distinctions</h4>
+            <ul class="plain">
+              <li>CGPA 9.09 in the 2nd semester of M.Tech</li>
+              <li>Secured M.Tech project work at IGCAR, a national research institution, under Dr. David Vijayanand (Aug 2026 – May 2027)</li>
+              <li>84% in the National Level Quiz on Mechanical Engineering, LBRCE</li>
+              <li>Silver Medal, Lawn Tennis (U-19), D.A.V. National Sports, Cluster Level (South), 2014–15</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Tools of the trade</h4>
+            <div class="tools"><span>CATIA V5</span><span>PTC Creo</span><span>SolidWorks</span><span>ABAQUS</span><span>ANSYS Fluent</span><span>GD&amp;T</span><span>CAD Assembly</span><span>Thermo-Mechanical FEA</span><span>MATLAB</span><span>Python</span></div>
+            <h4>Quality analysis</h4>
+            <div class="tools"><span>Pareto chart</span><span>Histogram</span><span>Ishikawa Diagram</span></div>
+            <h4>Certifications</h4>
+            <ul class="plain">
+              <li>Python for Everybody</li>
+              <li>Python Data Structures</li>
+              <li>Lean Six Sigma Green Belt (ongoing)</li>
+              <li>Six Sigma Principles Yellow Belt (ongoing)</li>
+              <li>Supply Chain Management (ongoing)</li>
+            </ul>
+            <h4>Coursework</h4>
+            <ul class="plain">
+              <li>Mechatronics System in Manufacturing</li>
+              <li>Smart Manufacturing</li>
+              <li>Micro Manufacturing Technology</li>
+              <li>Advanced Material Processing and Characterization</li>
+              <li>Manufacturing &amp; Precision Engineering Lab</li>
+              <li>Modelling and Simulation in Manufacturing</li>
+            </ul>
+          </div>
+        </div>
+        <div class="sig">
+          <div><b>Peram Chaitanya Raja</b>Holder</div>
+          <div><b>ME25M131</b>Roll number</div>
+          <div><b>PR/11/ME/26/131</b>Placement reg.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="enq" id="enquiries">
+  <div class="wrap">
+    <div class="divider"><span class="eyebrow">Enquiries</span></div>
+    <h2 style="margin-top:16px">Let's make something <em>precious.</em></h2>
+    <p>I'd be glad to hear from you.</p>
+    <div class="mail">
+      <code id="email">me25m131@smail.iitm.ac.in</code>
+      <button class="btn solid" id="copy" type="button">Copy email</button>
+      <a class="btn" href="https://drive.google.com/file/d/14a06MWt_aTO4qMZVdP5MPF5jzrwkX93I/view?usp=sharing" target="_blank" rel="noopener">View resume ↗</a>
+      <span class="copied" id="copied" aria-live="polite"></span>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Peram Chaitanya Raja · IIT Madras</span>
+    <span>Crafted in gold &amp; sapphire</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var GOLD='#D4B26A', HI='#F2DC9E', LO='#8E7238', SAP='#3D6BFF', SAP2='#7C9BFF', FAINT='#A69F93', LINE='#2F2B28';
+
+  /* Rotator */
+  var words=['model weld heat in ABAQUS','run CFD in ANSYS Fluent','train ML models in Python','produce promotional videos','design posters and pitch decks','manage Instagram and LinkedIn','run events on the ground'];
+  var rot=document.getElementById('rot'), wi=0;
+  if(rot && !reduce){
+    setInterval(function(){
+      rot.classList.add('out');
+      setTimeout(function(){ wi=(wi+1)%words.length; rot.textContent=words[wi]; rot.classList.remove('out'); }, 350);
+    }, 2400);
+  }
+
+  /* Copy email */
+  var btn=document.getElementById('copy'), out=document.getElementById('copied'), em=document.getElementById('email');
+  btn.addEventListener('click', function(){
+    function fallback(){ var r=document.createRange(); r.selectNodeContents(em); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); out.textContent='Selected · press Ctrl+C'; }
+    try{ navigator.clipboard.writeText(em.textContent).then(function(){ out.textContent='Copied'; }, fallback); }catch(e){ fallback(); }
+  });
+
+  /* Piece illustrations: gold line-art on velvet */
+  function rng(seed){ return function(){ seed=(seed*16807)%2147483647; return (seed-1)/2147483646; }; }
+  var draws={
+    weld:function(c){
+      var x0=60,y0=70,w=480,h=220,cols=24,rows=11;
+      for(var i=0;i<cols;i++) for(var j=0;j<rows;j++){
+        var cx=x0+(i+.5)*w/cols, cy=y0+(j+.5)*h/rows, xs=x0+w*0.68, dy=(cy-(y0+h/2))/38;
+        var dx=cx-xs, along = dx<0 ? Math.exp(-dx*dx/(2*150*150)) : Math.exp(-dx*dx/(2*40*40));
+        var t=Math.exp(-dy*dy/2)*along, band=Math.floor(t*7)/7;
+        if(band>0){ c.fillStyle='rgba(212,178,106,'+(0.08+band*0.8)+')'; c.fillRect(x0+i*w/cols, y0+j*h/rows, w/cols, h/rows); }
+      }
+      c.strokeStyle='rgba(212,178,106,0.35)'; c.lineWidth=0.7;
+      for(var i=0;i<=cols;i++){ c.beginPath(); c.moveTo(x0+i*w/cols,y0); c.lineTo(x0+i*w/cols,y0+h); c.stroke(); }
+      for(var j=0;j<=rows;j++){ c.beginPath(); c.moveTo(x0,y0+j*h/rows); c.lineTo(x0+w,y0+j*h/rows); c.stroke(); }
+      var xs=x0+w*0.68, g=c.createRadialGradient(xs,y0+h/2,0,xs,y0+h/2,40); g.addColorStop(0,'rgba(255,250,230,1)'); g.addColorStop(1,'rgba(255,250,230,0)');
+      c.fillStyle=g; c.beginPath(); c.arc(xs,y0+h/2,40,0,7); c.fill();
+      c.strokeStyle=HI; c.setLineDash([4,4]); c.beginPath(); c.moveTo(xs+60,y0+h/2); c.lineTo(xs+110,y0+h/2); c.stroke(); c.setLineDash([]);
+      c.beginPath(); c.moveTo(xs+110,y0+h/2); c.lineTo(xs+102,y0+h/2-5); c.moveTo(xs+110,y0+h/2); c.lineTo(xs+102,y0+h/2+5); c.stroke();
+      label(c,'SS316LN · TIG · weld direction →',60,320);
+    },
+    battery:function(c){
+      for(var i=0;i<8;i++){ var col=i%4,row=(i/4)|0, x=150+col*100, y=80+row*110;
+        c.fillStyle='rgba(212,178,106,'+(0.08+col*0.12)+')'; c.strokeStyle=GOLD; c.lineWidth=1.4;
+        rr(c,x,y,70,90,8); c.fill(); c.stroke();
+        c.fillStyle=GOLD; c.fillRect(x+27,y-6,16,6);
+        c.fillStyle=HI; c.font='500 12px "IBM Plex Mono", monospace'; c.textAlign='center'; c.fillText('B'+(i+1),x+35,y+50); }
+      c.strokeStyle=SAP2; c.lineWidth=1.4;
+      for(var k=0;k<4;k++){ var y=70+k*68; c.beginPath(); for(var x=30;x<=130;x+=2){ var yy=y+Math.sin(x/10)*4; x===30?c.moveTo(x,yy):c.lineTo(x,yy); } c.stroke();
+        c.beginPath(); c.moveTo(130,y); c.lineTo(122,y-5); c.moveTo(130,y); c.lineTo(122,y+5); c.stroke(); }
+      c.textAlign='left'; label(c,'coolant inlet 18 °C · 1 m/s → 8 cells',30,320);
+    },
+    scatter:function(c){
+      var x0=90,y0=300,s=230; c.strokeStyle=FAINT; c.lineWidth=1;
+      c.beginPath(); c.moveTo(x0,y0-s-10); c.lineTo(x0,y0); c.lineTo(x0+s+170,y0); c.stroke();
+      c.strokeStyle=LO; c.setLineDash([5,5]); c.beginPath(); c.moveTo(x0,y0); c.lineTo(x0+s*1.6,y0-s); c.stroke(); c.setLineDash([]);
+      var r=rng(42); for(var i=0;i<90;i++){ var t=r(), n=(r()-.5)*14; c.fillStyle= i%7===0 ? SAP2 : GOLD; c.beginPath(); c.arc(x0+t*s*1.6, y0-t*s+n, 3, 0, 7); c.fill(); }
+      c.fillStyle=HI; c.font='400 30px "Bodoni Moda", Georgia, serif'; c.textAlign='left'; c.fillText('R² = 0.9929', 360, 120);
+      label(c,'predicted vs actual positioning error',90,330);
+    },
+    signals:function(c){
+      var r=rng(7), ys=[80,150,220];
+      ys.forEach(function(y,k){ c.strokeStyle=k===1?SAP2:GOLD; c.lineWidth=1.3; c.beginPath();
+        for(var x=40;x<=300;x+=3){ var v=Math.sin(x/(8+k*5))*14+Math.sin(x/3.1+k)*5+(r()-.5)*6; x===40?c.moveTo(x,y+v):c.lineTo(x,y+v); } c.stroke();
+        c.strokeStyle=LO; c.beginPath(); c.moveTo(300,y); c.quadraticCurveTo(360,y,400,150); c.stroke();
+        c.fillStyle=FAINT; c.font='500 11px "IBM Plex Mono", monospace'; c.textAlign='left'; c.fillText('S'+(k+1),12,y+4); });
+      c.strokeStyle=HI; c.lineWidth=1.4; c.beginPath(); c.arc(420,150,22,0,7); c.stroke();
+      c.strokeStyle=HI; c.lineWidth=2.2; c.beginPath();
+      for(var x=450;x<=570;x+=2){ var v=Math.sin(x/12)*18; x===450?c.moveTo(x,150+v):c.lineTo(x,150+v); } c.stroke();
+      label(c,'multi-sensor signals → fused features → ML model',40,320);
+    },
+    airfoil:function(c){
+      var m=.04,p=.4,t=.12, ch=420, ox=90, oy=170, aoa=-8*Math.PI/180, up=[], lo=[];
+      for(var i=0;i<=100;i++){ var b=i/100*Math.PI, x=(1-Math.cos(b))/2;
+        var yt=5*t*(.2969*Math.sqrt(x)-.126*x-.3516*x*x+.2843*x*x*x-.1015*x*x*x*x);
+        var yc= x<p ? m/(p*p)*(2*p*x-x*x) : m/((1-p)*(1-p))*((1-2*p)+2*p*x-x*x);
+        var dyc= x<p ? 2*m/(p*p)*(p-x) : 2*m/((1-p)*(1-p))*(p-x), th=Math.atan(dyc);
+        up.push([x-yt*Math.sin(th), yc+yt*Math.cos(th)]); lo.push([x+yt*Math.sin(th), yc-yt*Math.cos(th)]); }
+      function P(q){ var x=q[0]*ch, y=-q[1]*ch; return [ox+x*Math.cos(aoa)-y*Math.sin(aoa), oy+x*Math.sin(aoa)+y*Math.cos(aoa)]; }
+      for(var k=-4;k<=4;k++){ if(k===0) continue; var y=oy+k*30; c.strokeStyle= k<0 ? 'rgba(124,155,255,0.6)' : 'rgba(212,178,106,0.45)'; c.lineWidth=1; c.beginPath();
+        for(var x=20;x<=580;x+=4){ var bump=Math.exp(-Math.pow((x-260)/130,2))*(k<0?-22:-10)/Math.abs(k)*1.6; var down= x>420 ? (x-420)*0.05/Math.abs(k)*2 : 0; var yy=y+bump+down; x===20?c.moveTo(x,yy):c.lineTo(x,yy); } c.stroke(); }
+      c.beginPath(); up.forEach(function(q,i){ var r=P(q); i?c.lineTo(r[0],r[1]):c.moveTo(r[0],r[1]); }); for(var i=lo.length-1;i>=0;i--){ var r=P(lo[i]); c.lineTo(r[0],r[1]); } c.closePath();
+      c.fillStyle='rgba(212,178,106,0.22)'; c.fill(); c.strokeStyle=HI; c.lineWidth=1.6; c.stroke();
+      label(c,'NACA 4412 · 4% camber at 40% chord · 12% thickness',40,320);
+    },
+    arm:function(c){
+      var pts=[[160,290],[160,220],[270,150],[380,175],[440,230]];
+      c.strokeStyle=LO; c.setLineDash([3,6]); c.lineWidth=1.2; c.beginPath(); c.arc(330,330,190,Math.PI*1.18,Math.PI*1.72); c.stroke(); c.setLineDash([]);
+      c.fillStyle='rgba(212,178,106,0.2)'; c.strokeStyle=GOLD; c.lineWidth=1.4; rr(c,115,290,90,24,4); c.fill(); c.stroke();
+      c.lineWidth=12; c.lineCap='round'; c.strokeStyle='rgba(212,178,106,0.45)'; c.beginPath(); pts.forEach(function(q,i){ i?c.lineTo(q[0],q[1]):c.moveTo(q[0],q[1]); }); c.stroke();
+      c.lineWidth=1.4; c.strokeStyle=HI; c.beginPath(); pts.forEach(function(q,i){ i?c.lineTo(q[0],q[1]):c.moveTo(q[0],q[1]); }); c.stroke();
+      pts.forEach(function(q,i){ c.fillStyle= i===pts.length-1 ? SAP : '#0F0E10'; c.strokeStyle=GOLD; c.beginPath(); c.arc(q[0],q[1],i===pts.length-1?8:9,0,7); c.fill(); c.stroke(); });
+      var g=c.createRadialGradient(452,248,0,452,248,24); g.addColorStop(0,'rgba(255,246,220,0.9)'); g.addColorStop(1,'rgba(255,246,220,0)'); c.fillStyle=g; c.beginPath(); c.arc(452,248,24,0,7); c.fill();
+      label(c,'5-DOF arm · optimised trajectory for robotic welding',40,330);
+    },
+    rolling:function(c){
+      c.strokeStyle=GOLD; c.lineWidth=1.4; c.fillStyle='rgba(212,178,106,0.12)';
+      [[300,110,46],[220,240,40],[380,240,40]].forEach(function(r){ c.beginPath(); c.arc(r[0],r[1],r[2],0,7); c.fill(); c.stroke(); c.beginPath(); c.arc(r[0],r[1],4,0,7); c.fillStyle=GOLD; c.fill(); c.fillStyle='rgba(212,178,106,0.12)'; });
+      c.strokeStyle=HI; c.lineWidth=7; c.lineCap='round'; c.beginPath(); c.arc(300,330,150,Math.PI*1.08,Math.PI*1.92); c.stroke();
+      c.strokeStyle=SAP2; c.lineWidth=1.2; [[300,110,-1],[220,240,1],[380,240,-1]].forEach(function(r){ c.beginPath(); c.arc(r[0],r[1],r[2]>0?52:58,-0.6,0.6); c.stroke(); });
+      label(c,'plate rolling · one of 4 processes on the shop floor',40,330);
+    }
+  };
+  function rr(c,x,y,w,h,r){ c.beginPath(); c.moveTo(x+r,y); c.lineTo(x+w-r,y); c.quadraticCurveTo(x+w,y,x+w,y+r); c.lineTo(x+w,y+h-r); c.quadraticCurveTo(x+w,y+h,x+w-r,y+h); c.lineTo(x+r,y+h); c.quadraticCurveTo(x,y+h,x,y+h-r); c.lineTo(x,y+r); c.quadraticCurveTo(x,y,x+r,y); c.closePath(); }
+  function label(c,t,x,y){ c.fillStyle=FAINT; c.font='500 11px "IBM Plex Mono", monospace'; c.textAlign='left'; c.fillText(t.toUpperCase(),x,y); }
+  function drawAll(){
+    document.querySelectorAll('canvas[data-draw]').forEach(function(cv){
+      var c=cv.getContext('2d'); c.setTransform(2,0,0,2,0,0); c.clearRect(0,0,600,360); draws[cv.dataset.draw](c);
+    });
+  }
+  drawAll();
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(drawAll);
+})();
+</script>
